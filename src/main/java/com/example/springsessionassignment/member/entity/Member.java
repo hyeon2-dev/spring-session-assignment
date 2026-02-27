@@ -1,0 +1,27 @@
+package com.example.springsessionassignment.member.entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Getter
+@NoArgsConstructor
+public class Member {
+
+
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String email;
+
+    public Member(String email) {
+        this.email = email;
+    }
+
+    public void updateEmail(String email) {
+        this.email = email;
+    }
+}
